@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap3.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bus.css}"/>
+    <title th:text="#{busCompany}"></title>
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="row head ">
+        <div class="col-lg-2">
+            <img src="http://www.gibraltarbuscompany.gi/site//images/buscompany_60px.png" class="logo " imgfield="img" alt="ПЕРСПЕКТИВА.кофе">
+        </div>
+        <div class="col-lg-8 margin">
+            <ul class=" nav nav-pills nav-justified ">
+                <li class="active" ><a class="addAction" th:text="#{addService}" onclick="createForm()" href="#"></a></li>
+                <li ><a href="#" class="showAction" name="/rest/orderByDepartureTime" th:text="#{servicesByDepartTime}" ></a></li>
+                <li ><a href="#" class="showAction" name="/rest/orderByCompanyNameAndDepartureTime"  th:text="#{servicesByCompanyName}" ></a></li>
+                <li ><a href="#"  class="deleteAction"  th:text="#{deleteService}" onclick="deleteC()" ></a></li>
+                <li ><a href="#"  class="showAction"  name="/rest/orderByCompanyNameAndDepartureTime" th:text="#{showTimetable}" ></a></li>
+                <li ><div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" th:text="#{language}" data-toggle="dropdown"> <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="main?language=en_US">EN</a> </li>
+                        <li><a href="main?language=ru_RU">RU</a></li>
+                    </ul>
+                </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2 margintext">
+            <p class="text-center" th:text="#{welcome}">  <p id="user"  ></p></p>
+        </div>
+
+    </div><!-- /.row -->
+    <div class="row content">
+        <div class="col-lg-2">
+            <p class="text-center message"></p>
+        </div>
+        <div class="col-lg-8"  >
+            <div id="container">
+
+            </div>
+            <div class="offsetdown">
+                <p class="text-primary text-center">
+                <p th:text="#{firstDescribe}"><br>
+                <p th:text="#{secondDescribe}">
+                </p>
+            </div>
+
+        </div>
+
+        <div class="col-lg-2">
+            <p class="text-center message"></p>
+        </div>
+    </div>
+
+    <div class="row foot">
+        <div class="col-lg-2" style="padding-top:20px">
+            <p class="text-white">
+            <p th:text="#{about}"> <br>
+            <p th:text="#{adress}">
+            </p>
+        </div>
+
+        <div class="col-lg-2 col-lg-offset-3" style="padding-top:20px">
+            <p>
+                zaharzim@yandex.by <br>
+                +375295107806
+            </p>
+        </div>
+
+        <div class="col-lg-2 col-lg-offset-3" style="padding-top:20px">
+            <p>
+            <p th:text="#{timeWork}"> <br>
+            <p th:text="#{workHours}">
+            </p>
+        </div>
+    </div>
+
+    <div style="display:none">
+        <p class="springMessage" th:text="#{companyName}"></p>
+        <p class="springMessage" th:text="#{departureTime}"></p>
+        <p class="springMessage" th:text="#{arrivalTime}"></p>
+        <p class="springMessage" th:text="#{create}"></p>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--<script type="text/javascript" th:src="@{/js/formScript.js}"></script>-->
+<script type="text/javascript" th:src="@{/js/showByDepartTime.js}"></script>
+<script type="text/javascript" th:src="@{/js/addTimetable.js}"></script>
+
+
+</body>
+</html>
