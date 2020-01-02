@@ -14,12 +14,8 @@ public interface TimetableRepo extends CrudRepository<Timetable,Integer> {
 
     List<Timetable> findAllByOrderByDepartureTime();
 
-    List<Timetable> findAllByOrderByArrivalTime();
-
-
-
     List<Timetable> findAllByOrderByCompanyNameDescDepartureTime();
 
-    List<Timetable> findAllByOrderByDepartureTimeAscArrivalTime();
+
 
 }

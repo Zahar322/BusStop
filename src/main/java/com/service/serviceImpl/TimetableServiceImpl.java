@@ -1,8 +1,10 @@
 package com.service.serviceImpl;
 
+
 import com.entity.Timetable;
 import com.repo.TimetableRepo;
 import com.service.TimetableService;
+import com.validator.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +19,9 @@ public class TimetableServiceImpl implements TimetableService {
     @Autowired
     private TimetableRepo timetableRepo;
 
-    private static final Long hour=3600000L;
+    @Autowired
+    private List<Validator> validators;
 
-    private static final Time time=new Time(hour);
 
     @Override
     @Transactional
@@ -50,20 +52,12 @@ public class TimetableServiceImpl implements TimetableService {
     }
 
     @Override
-    public List<Timetable> getTestList() {
-        List<Timetable> timetables=timetableRepo.findAllByOrderByArrivalTime();
-        timetables.removeIf(item->{
-            Time interval=new Time(item.getArrivalTime().getTime()-item.getDepartureTime().getTime());
-            if(interval.compareTo(time)>0){
-                return true;
-            }else return false;
-        });
-
+    public List<Timetable> getFinalTimetables() {
+        List<Timetable> timetables=timetableRepo.findAllByOrderByDepartureTime();
+        for(Validator validator:validators){
+            timetables=validator.getValidTimetables(timetables);
+        }
         return timetables;
     }
 
-    @Override
-    public List<Timetable> findAllByOrderByDepartureTimeArrivalTime() {
-        return timetableRepo.findAllByOrderByDepartureTimeAscArrivalTime() ;
-    }
 }

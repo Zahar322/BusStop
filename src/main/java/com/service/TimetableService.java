@@ -18,7 +18,6 @@ public interface TimetableService {
 
     void deleteById(int id);
 
-    List<Timetable> getTestList();
+    List<Timetable> getFinalTimetables();
 
-    List<Timetable> findAllByOrderByDepartureTimeArrivalTime();
 }

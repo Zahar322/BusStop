@@ -25,12 +25,12 @@
                 <li ><a href="#" class="showAction" name="/rest/orderByDepartureTime" th:text="#{servicesByDepartTime}" ></a></li>
                 <li ><a href="#" class="showAction" name="/rest/orderByCompanyNameAndDepartureTime"  th:text="#{servicesByCompanyName}" ></a></li>
                 <li ><a href="#"  class="deleteAction"  th:text="#{deleteService}" onclick="deleteC()" ></a></li>
-                <li ><a href="#"  class="showAction"  name="/rest/orderByCompanyNameAndDepartureTime" th:text="#{showTimetable}" ></a></li>
+                <li ><a href="#" id="showTimetable" class="showAction"  name="/rest/getFinalTimetables" th:text="#{showTimetable}" ></a></li>
                 <li ><div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" th:text="#{language}" data-toggle="dropdown"> <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="main?language=en_US">EN</a> </li>
-                        <li><a href="main?language=ru_RU">RU</a></li>
+                        <li><a href="?language=en_US">EN</a> </li>
+                        <li><a href="?language=ru_RU">RU</a></li>
                     </ul>
                 </div>
                 </li>
@@ -92,6 +92,7 @@
         <p class="springMessage" th:text="#{departureTime}"></p>
         <p class="springMessage" th:text="#{arrivalTime}"></p>
         <p class="springMessage" th:text="#{create}"></p>
+        <p class="springMessage" th:text="#{delete}"></p>
 
     </div>
 

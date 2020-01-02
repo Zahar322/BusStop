@@ -16,14 +16,14 @@ public class RestApplicationController {
     @Autowired
     private TimetableService timetableService;
 
-//    @GetMapping("/orderByDepartureTime")
-//    public List<Timetable> findAllByOrderByDepartureTime(){
-//        return timetableService.findAllByOrderByDepartureTime();
-//    }
-
     @GetMapping("/orderByDepartureTime")
     public List<Timetable> findAllByOrderByDepartureTime(){
-        return timetableService.getTestList();
+        return timetableService.findAllByOrderByDepartureTime();
+    }
+
+    @GetMapping("/getFinalTimetables")
+    public List<Timetable> getFinalTimetables(){
+        return timetableService.getFinalTimetables();
     }
 
 

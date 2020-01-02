@@ -45,7 +45,7 @@ function setTimetables(jsonTimetables){
 function createTableForTimetable() {
     let messages=document.querySelectorAll(".springMessage");
     let container=document.getElementById("container");
-    let table=` <table  id="timetable" class="table content table-striped table-bordered table-hover">
+    let table=` <table  id="timetable" class="table tableContent table-striped table-bordered table-hover">
 
                     <th class="success col-lg-1">
                         <h4 class="text-center">Id</h4>
