@@ -24,20 +24,6 @@ function getServiceOrderByDepartureTime(uri) {
     request.send(null);
 }
 
-function deleteC() {
-    let url=`${window.location.protocol}//${window.location.host}/rest/delete/2`;
-    let request=new XMLHttpRequest();
-    request.open("DELETE",url);
-    request.onload=function(){
-        if(request.status==200){
-
-        }
-    };
-    request.send(null);
-}
-
-
-
 function setTimetables(jsonTimetables){
     timetables=JSON.parse(jsonTimetables);
 }

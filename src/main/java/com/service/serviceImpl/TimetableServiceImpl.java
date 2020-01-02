@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-import java.sql.Time;
+
 import java.util.*;
 
 @Service
@@ -43,6 +43,12 @@ public class TimetableServiceImpl implements TimetableService {
     @Override
     public List<Timetable> findAllByOrderByCompanyNameDescDepartureTime() {
         return timetableRepo.findAllByOrderByCompanyNameDescDepartureTime();
+    }
+
+    @Override
+    @Transactional
+    public void deleteTimetable(Timetable timetable) {
+        timetableRepo.deleteByCompanyNameAndArrivalTimeAndDepartureTime(timetable.getCompanyName(),timetable.getArrivalTime(),timetable.getDepartureTime());
     }
 
     @Override

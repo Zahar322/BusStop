@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 
-import java.util.Comparator;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -17,10 +17,8 @@ public class Timetable  {
 
     private String companyName;
 
-
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "HH:mm")
     private Date departureTime;
-
 
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "HH:mm")
     private Date arrivalTime;

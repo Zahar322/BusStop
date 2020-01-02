@@ -10,6 +10,8 @@ public interface TimetableService {
 
     void deleteByCompanyNameAndArrivalTimeAndDepartureTime(String companyName, Date arrivalTime, Date departureTime);
 
+    void deleteTimetable(Timetable timetable);
+
     List<Timetable> findAllByOrderByDepartureTime();
 
     List<Timetable> findAllByOrderByCompanyNameDescDepartureTime();

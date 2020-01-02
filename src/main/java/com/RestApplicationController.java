@@ -39,8 +39,8 @@ public class RestApplicationController {
     }
 
     @DeleteMapping("/delete")
-    public void deleteByCompanyNameAndBothTimes(String companyName, Date arrivalDate, Date departureDate){
-        timetableService.deleteByCompanyNameAndArrivalTimeAndDepartureTime(companyName, arrivalDate, departureDate);
+    public void deleteByCompanyNameAndBothTimes(@RequestBody Timetable timetable){
+        timetableService.deleteTimetable(timetable);
     }
 
     @GetMapping("/orderByCompanyNameAndDepartureTime")
